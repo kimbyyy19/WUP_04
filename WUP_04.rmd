@@ -11,8 +11,9 @@ output:
 require(knitr)
 require(tidyverse)
 require(tigerstats)
-
+GSScsv <-read.csv("GSScsv.csv")
 ```
+
 
 # Introduction
 
@@ -35,6 +36,14 @@ $H_a$ There is a significant difference in average score on the WORDSUM test bet
 ### Graphical Descriptive Results
 
 <!--Graphical results here.  Make sure to show your code.  Provide appropriate labels for axes, giving units if possible, and provide a good title for the graph, too.  Use the graphical results to describe the patterns if any that exist in the data as focused toward the research question!-->
+
+```{r}
+basicCN <- ggplot(GSScsv,aes(x=DEGREE,WORDSUM))
+
+basicCN + geom_boxplot()
+```
+
+A visual that help see the different is if when take the box of high school slide over the Junior college is underneath the junior college.In which makes it different between these two.Also if we visual sliding over the LT high school it's also a underneath the junior college like the High school.
 
 ### Numerical Descriptive Results
 
