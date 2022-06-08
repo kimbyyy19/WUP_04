@@ -44,7 +44,7 @@ basicCN + geom_boxplot()
 ```
 
 
-The graph shows that there is a difference in wordsum test scores between grade levels.A visual that help see the different is  when we take the box of high school slide over the Junior college it goes underneath the junior college.In which makes it different between these two.
+The graph shows demonstrates a difference in wordsum test scores between grade levels.A visual that help see the different is,if we take the box of high school slide over the Junior college it goes underneath the junior college.In which makes it different between these two.
 
 ### Numerical Descriptive Results
 
@@ -55,7 +55,7 @@ favstats(WORDSUM~DEGREE,data=GSScsv)
 ```
 
 
-The mean of the graduate students is 2.25 above the mean of LT high school students.The Q1 graduate students is 10.Which is a lager than the Q3 of high school students which is 9.
+The mean of the graduate students is 2.25 above the mean of LT high school students.The Q1 graduate students is 10.Which is a larger than the Q3 of high school students which is 9.
 
 
 ## Inferential Results
@@ -66,7 +66,7 @@ model1 <- aov(WORDSUM~DEGREE,data=GSScsv)
 summary.aov(model1)
 ```
 
-The possibility of getting results that a have no difference between subgroups is 2.36 out of 10,000.This make us think that there's a different in the test scores between the subgroups.If we have the P-value we want to see what are different from one another.Next we will us the t test to see the different between them.
+The possibility of getting results that  have no difference between subgroups is 2.36 out of 10,000.This make us think  there is a different in the test scores between the subgroups.If we have the P-value we want to see what are different from one another.Next we will use the t test to see the different between them.
 
 
 ```{r}
@@ -75,7 +75,7 @@ par(mar = c(3,16.7, 2, 2))
 plot(TukeyHSD(model1),las=2)
 ```
 
-If any of the confidence interval that do not reach the 0 are different.The comparison with the Lt high school to the graduate is shown to be different because they don't reach 0.High school compared to graduate is different because it does not reach the 0 either.
+If any of the confidence interval that do not reach the 0 they are different.The comparison with the LT high school to the graduate is shown to be different because they don't reach 0.High school compared to graduate is different because it does not reach the 0 either.
 
 
 
@@ -83,8 +83,3 @@ If any of the confidence interval that do not reach the 0 are different.The comp
 # Discussion and Conclusion
 
 <!--Discussion and conclusion here.  If you found a relationship be sure to consider whether the relationship occurs because one of the variavbles causes the other, or whether they perhasps are related for some other reason.  Watch the chapter 6 videos from the GeorgeTown videos collection.!-->
-  
-The mean of LT high school studnets is compared to the men of graduate students is 2.25 lower.The first inferential test showed us that in that chances of getting these results if there was no difference is a 2.36 out of 10,000 chance: Finally, we compared the results of grade levels through a tukey test which showed there was a difference between High School and Graduate results and LT High School and Graduate results Neither of the confidence intervals reached 0.
-
-
-  
