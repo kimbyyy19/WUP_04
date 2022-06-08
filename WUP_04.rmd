@@ -43,7 +43,8 @@ basicCN <- ggplot(GSScsv,aes(x=DEGREE,WORDSUM))
 basicCN + geom_boxplot()
 ```
 
-A visual that help see the different is if when take the box of high school slide over the Junior college is underneath the junior college.In which makes it different between these two.Also if we visual sliding over the LT high school it's also a underneath the junior college like the High school.
+
+The graph shows that there is a difference in wordsum test scores between grade levels.A visual that help see the different is  when we take the box of high school slide over the Junior college it goes underneath the junior college.In which makes it different between these two.
 
 ### Numerical Descriptive Results
 
@@ -52,7 +53,9 @@ A visual that help see the different is if when take the box of high school slid
 ```{r}
 favstats(WORDSUM~DEGREE,data=GSScsv)
 ```
-The Q1 was graduate students they have an SD was about 2.05 it's above the Lt high school if which that's is 1.95.The median of the graduate  median which is 10.which these both are bigger than the Lt high school the Q1 id 9.
+
+
+The mean of the graduate students is 2.25 above the mean of LT high school students.The Q1 graduate students is 10.Which is a lager than the Q3 of high school students which is 9.
 
 
 ## Inferential Results
@@ -63,6 +66,8 @@ model1 <- aov(WORDSUM~DEGREE,data=GSScsv)
 summary.aov(model1)
 ```
 
+The possibility of getting results that a have no difference between subgroups is 2.36 out of 10,000.This make us think that there's a different in the test scores between the subgroups.If we have the P-value we want to see what are different from one another.Next we will us the t test to see the different between them.
+
 
 ```{r}
 #we specify the margins starting at the bottom and proceeding clockwise - thus 8.7 is the left side margin to hold the names of the factors
@@ -70,9 +75,7 @@ par(mar = c(3,16.7, 2, 2))
 plot(TukeyHSD(model1),las=2)
 ```
 
-The high school graduate and LT high school is outside of the dotted line and these outside of  the dot lines are going to be negative number.Their is a different between the high school graduate and the graduate.
-
-
+If any of the confidence interval that do not reach the 0 are different.The comparison with the Lt high school to the graduate is shown to be different because they don't reach 0.High school compared to graduate is different because it does not reach the 0 either.
 
 
 ```{r}
